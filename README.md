@@ -267,6 +267,16 @@ if (Input.GetKeyDown(KeyCode.Space)) {
 if (Input.GetButtonDown("Jump")) {
     Debug.Log("Do something");
 }
+
+// Move Asset (Controll)
+private float horizontalInput;
+
+void Update()
+{
+    horizontalInput = Input.GetAxis("Horizontal");
+    
+    transform.Rotate(Vector3.up, turnspeed * horizontalInput * Time.deltaTime);
+}
 ```
 
 ### Mouse
